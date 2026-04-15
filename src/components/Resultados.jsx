@@ -16,7 +16,15 @@ export default function Resultados({ hospitales, buscando }) {
             <span className={`nivel nivel-${h.nivel}`}>Nivel {h.nivel} — {NIVEL_LABEL[h.nivel]}</span>
           </div>
           <p>📍 {h.direccion}</p>
-          <p>📞 {h.telefono}</p>
+          <a
+            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(h.direccion)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-maps"
+          >
+            🗺️ Cómo llegar
+          </a>
+
         </div>
       ))}
     </div>
